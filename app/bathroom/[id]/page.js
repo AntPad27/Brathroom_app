@@ -15,10 +15,11 @@ export default function BathroomDetail({ params }) {
   }, [])
 
   async function fetchBathroom() {
+    const { id } = await params;
     const { data, error } = await supabase
       .from('bathrooms')
       .select('*')
-      .eq('id', params.id)
+      .eq('id', id)
       .single()
     
     if (error) {
