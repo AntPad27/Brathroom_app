@@ -7,6 +7,7 @@ import { getDeviceId, hashDeviceId } from '@/lib/utils'
 import Link from 'next/link'
 
 export default function AddReview({ params }) {
+  const { id } = use(params)
   const router = useRouter()
   const [cleanliness, setCleanliness] = useState(3)
   const [accessibility, setAccessibility] = useState(3)
@@ -24,7 +25,7 @@ export default function AddReview({ params }) {
     const { error } = await supabase
       .from('reviews')
       .insert({
-        bathroom_id: params.id,
+        bathroom_id: id,
         cleanliness,
         accessibility,
         privacy,
@@ -36,7 +37,7 @@ export default function AddReview({ params }) {
       console.error('Error submitting review:', error)
       alert('Error submitting review. You may have already reviewed this bathroom recently.')
     } else {
-      router.push(`/bathroom/${params.id}`)
+      router.push(`/bathroom/${id}`)
     }
     
     setSubmitting(false)
@@ -45,7 +46,7 @@ export default function AddReview({ params }) {
   return (
     <div className="min-h-screen">
       <header className="bg-blue-600 text-white p-4">
-        <Link href={`/bathroom/${params.id}`} className="text-sm hover:underline">← Back</Link>
+        <Link href={`/bathroom/${id}`} className="text-sm hover:underline">← Back</Link>
         <h1 className="text-2xl font-bold mt-2">Add Review</h1>
       </header>
 

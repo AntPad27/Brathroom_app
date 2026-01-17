@@ -15,7 +15,7 @@ export default function BathroomDetail({ params }) {
   }, [])
 
   async function fetchBathroom() {
-    const { id } = await params;
+    const { id } = await params
     const { data, error } = await supabase
       .from('bathrooms')
       .select('*')
@@ -30,10 +30,11 @@ export default function BathroomDetail({ params }) {
   }
 
   async function fetchReviews() {
+    const { id } = await params
     const { data, error } = await supabase
       .from('reviews')
       .select('*')
-      .eq('bathroom_id', params.id)
+      .eq('bathroom_id', id)
       .order('created_at', { ascending: false })
     
     if (error) {
