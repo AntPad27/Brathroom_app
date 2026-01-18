@@ -66,7 +66,7 @@ export default function Home() {
         <div className="flex items-start gap-3">
           <img src="/slugloo-icon.PNG" alt="Slug Loo Icon" className="w-16 h-16" />
           <div>
-            <h1 className="text-2xl font-bold">Slug Loo</h1>
+            <h1 className="text-4xl font-bold">Slug Loo</h1>
             <p className="text-sm">Find, rate, and add bathrooms on campus</p>
           </div>
         </div>
