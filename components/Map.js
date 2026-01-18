@@ -3,6 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { Wrapper } from '@googlemaps/react-wrapper'
 
+// UCSC campus bounds
+const UCSC_BOUNDS = {
+  north: 37.0050,
+  south: 36.9750,
+  west: -122.0750,
+  east: -122.0450,
+}
+
 function MapComponent({ bathrooms, userLocation }) {
   const mapRef = useRef(null)
   const [map, setMap] = useState(null)
@@ -14,6 +22,10 @@ function MapComponent({ bathrooms, userLocation }) {
     const newMap = new window.google.maps.Map(mapRef.current, {
       center: { lat: 36.9914, lng: -122.0609 }, // UCSC coordinates
       zoom: 15,
+      restriction: {
+        latLngBounds: UCSC_BOUNDS,
+        strictBounds: false,
+      },
     })
 
     setMap(newMap)
