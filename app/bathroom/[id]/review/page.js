@@ -65,7 +65,7 @@ export default function AddReview({ params }) {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-blue-600 text-white p-4">
+      <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
         <Link href={`/bathroom/${id}`} className="text-sm hover:underline">← Back</Link>
         <h1 className="text-2xl font-bold mt-2">Add Review</h1>
       </header>
@@ -111,7 +111,8 @@ export default function AddReview({ params }) {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400"
+            className="w-full py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400"
+            style={{ backgroundColor: submitting ? undefined : '#003c6c', color: '#fdc700' }}
           >
             {submitting ? 'Submitting...' : 'Submit Review'}
           </button>

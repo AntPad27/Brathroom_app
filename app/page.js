@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-blue-600 text-white p-4">
+      <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
         <h1 className="text-2xl font-bold">UCSC Restroom Radar</h1>
         <p className="text-sm">Find, rate, and add bathrooms on campus</p>
       </header>

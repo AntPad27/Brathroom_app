@@ -61,7 +61,7 @@ export default function BathroomDetail({ params }) {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-blue-600 text-white p-4">
+      <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
         <Link href="/" className="text-sm hover:underline">← Back to Map</Link>
         <h1 className="text-2xl font-bold mt-2">{bathroom.name}</h1>
         <p className="text-sm">{bathroom.building}</p>
