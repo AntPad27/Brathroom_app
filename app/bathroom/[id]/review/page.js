@@ -43,6 +43,26 @@ export default function AddReview({ params }) {
     setSubmitting(false)
   }
 
+  const StarRating = ({ value, onChange, label }) => {
+    return (
+      <div className="mb-6">
+        <label className="block font-bold mb-3">{label}</label>
+        <div className="flex gap-2">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              type="button"
+              onClick={() => onChange(star)}
+              className="text-4xl transition-all hover:scale-110"
+            >
+              {star <= value ? '⭐' : '☆'}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen">
       <header className="bg-blue-600 text-white p-4">
@@ -54,49 +74,25 @@ export default function AddReview({ params }) {
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow">
           
           {/* Cleanliness */}
-          <div className="mb-6">
-            <label className="block font-bold mb-2">
-              Cleanliness: {cleanliness}/5
-            </label>
-            <input
-              type="range"
-              min="1"
-              max="5"
-              value={cleanliness}
-              onChange={(e) => setCleanliness(parseInt(e.target.value))}
-              className="w-full"
-            />
-          </div>
+          <StarRating 
+            value={cleanliness}
+            onChange={setCleanliness}
+            label="Cleanliness"
+          />
 
           {/* Accessibility */}
-          <div className="mb-6">
-            <label className="block font-bold mb-2">
-              Accessibility: {accessibility}/5
-            </label>
-            <input
-              type="range"
-              min="1"
-              max="5"
-              value={accessibility}
-              onChange={(e) => setAccessibility(parseInt(e.target.value))}
-              className="w-full"
-            />
-          </div>
+          <StarRating 
+            value={accessibility}
+            onChange={setAccessibility}
+            label="Accessibility"
+          />
 
           {/* Privacy */}
-          <div className="mb-6">
-            <label className="block font-bold mb-2">
-              Privacy: {privacy}/5
-            </label>
-            <input
-              type="range"
-              min="1"
-              max="5"
-              value={privacy}
-              onChange={(e) => setPrivacy(parseInt(e.target.value))}
-              className="w-full"
-            />
-          </div>
+          <StarRating 
+            value={privacy}
+            onChange={setPrivacy}
+            label="Privacy"
+          />
 
           {/* Comment */}
           <div className="mb-6">
