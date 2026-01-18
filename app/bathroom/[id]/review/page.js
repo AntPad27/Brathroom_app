@@ -55,7 +55,9 @@ export default function AddReview({ params }) {
               onClick={() => onChange(star)}
               className="text-4xl transition-all hover:scale-110"
             >
-              {star <= value ? '⭐' : '☆'}
+            <span style={{ color: star <= value ? '#fdc700' : '#003c6c' }}>
+              {star <= value ? '★' : '★'}
+            </span>
             </button>
           ))}
         </div>

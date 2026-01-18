@@ -17,7 +17,7 @@ const UCSC_BOUNDS = {
 function AddBathroomMap({ onLocationSelect, initialLocation }) {
   const mapRef = useRef(null)
   const [map, setMap] = useState(null)
-  const [marker, setMarker] = useState(null)
+  const markerRef = useRef(null)
 
   useEffect(() => {
     if (!mapRef.current) return
@@ -39,7 +39,7 @@ function AddBathroomMap({ onLocationSelect, initialLocation }) {
       const lng = e.latLng.lng()
       
       // Remove old marker
-      if (marker) marker.setMap(null)
+      if (markerRef.current) markerRef.current.setMap(null)
       
       // Add new marker
       const newMarker = new window.google.maps.Marker({
@@ -47,7 +47,7 @@ function AddBathroomMap({ onLocationSelect, initialLocation }) {
         map: newMap,
       })
       
-      setMarker(newMarker)
+      markerRef.current = newMarker  // Store in ref
       onLocationSelect(lat, lng)
     })
   }, [])
