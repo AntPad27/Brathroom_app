@@ -61,10 +61,15 @@ export default function Home() {
     })
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" >
       <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
-        <h1 className="text-2xl font-bold">UCSC Restroom Radar</h1>
-        <p className="text-sm">Find, rate, and add bathrooms on campus</p>
+        <div className="flex items-center gap-3">
+          <img src="/slugloo-icon.PNG" alt="Slug Loo Icon" className="w-16 h-16" />
+          <div>
+            <h1 className="text-2xl font-bold">Slug Loo</h1>
+            <p className="text-sm">Find, rate, and add bathrooms on campus</p>
+          </div>
+        </div>
       </header>
 
       <main className="container mx-auto p-4">
@@ -76,6 +81,7 @@ export default function Home() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full p-2 border rounded mb-3"
+            style={{ border: '1px solid #003c6c' }}
           />
           
           <div className="flex gap-3 flex-wrap">
@@ -115,7 +121,8 @@ export default function Home() {
         <div className="mb-4">
           <Link 
             href="/add"
-            className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700"
+            className="inline-block px-6 py-3 rounded-lg font-semibold"
+            style={{ backgroundColor: '#003c6c', color: '#fff' }}
           >
             + Add Bathroom
           </Link>

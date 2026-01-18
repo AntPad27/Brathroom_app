@@ -66,8 +66,13 @@ export default function AddReview({ params }) {
   return (
     <div className="min-h-screen">
       <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
-        <Link href={`/bathroom/${id}`} className="text-sm hover:underline">← Back</Link>
-        <h1 className="text-2xl font-bold mt-2">Add Review</h1>
+        <div className="flex items-center gap-3">
+          <img src="/slugloo-icon.PNG" alt="Slug Loo Icon" className="w-16 h-16" />
+          <div>
+            <Link href={`/bathroom/${id}`} className="text-sm hover:underline">← Back</Link>
+            <h1 className="text-2xl font-bold mt-2">Add Review</h1>
+          </div>
+        </div>
       </header>
 
       <main className="container mx-auto p-4 max-w-2xl">
@@ -105,6 +110,7 @@ export default function AddReview({ params }) {
               rows="4"
               className="w-full p-2 border rounded"
               placeholder="Share your experience..."
+              style={{ border: '1px solid #003c6c' }}
             />
           </div>
 
@@ -112,7 +118,7 @@ export default function AddReview({ params }) {
             type="submit"
             disabled={submitting}
             className="w-full py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400"
-            style={{ backgroundColor: submitting ? undefined : '#003c6c', color: '#fdc700' }}
+            style={{ backgroundColor: submitting ? undefined : '#003c6c', color: '#fff' }}
           >
             {submitting ? 'Submitting...' : 'Submit Review'}
           </button>

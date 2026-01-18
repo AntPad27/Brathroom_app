@@ -128,8 +128,13 @@ export default function AddBathroom() {
   return (
     <div className="min-h-screen">
       <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
-        <Link href="/" className="text-sm hover:underline">← Back to Map</Link>
-        <h1 className="text-2xl font-bold mt-2">Add Bathroom</h1>
+        <div className="flex items-center gap-3">
+          <img src="/slugloo-icon.PNG" alt="Slug Loo Icon" className="w-16 h-16" />
+          <div>
+            <Link href="/" className="text-sm hover:underline">← Back to Map</Link>
+            <h1 className="text-2xl font-bold mt-2">Add Bathroom</h1>
+          </div>
+        </div>
       </header>
 
       <main className="container mx-auto p-4 max-w-3xl">
@@ -148,6 +153,7 @@ export default function AddBathroom() {
                 required
                 className="w-full p-2 border rounded"
                 placeholder="e.g., McHenry Library 1st Floor"
+                style={{ border: '1px solid #003c6c' }}
               />
             </div>
 
@@ -160,6 +166,7 @@ export default function AddBathroom() {
                 required
                 className="w-full p-2 border rounded"
                 placeholder="e.g., McHenry Library"
+                style={{ border: '1px solid #003c6c' }}
               />
             </div>
           </div>
@@ -239,6 +246,7 @@ export default function AddBathroom() {
             type="submit"
             disabled={submitting}
             className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400"
+            style={{ backgroundColor: '#003c6c', color: '#fff' }}
           >
             {submitting ? 'Adding...' : 'Add Bathroom'}
           </button>

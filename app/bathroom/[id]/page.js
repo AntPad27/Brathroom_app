@@ -62,9 +62,14 @@ export default function BathroomDetail({ params }) {
   return (
     <div className="min-h-screen">
       <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
-        <Link href="/" className="text-sm hover:underline">← Back to Map</Link>
-        <h1 className="text-2xl font-bold mt-2">{bathroom.name}</h1>
-        <p className="text-sm">{bathroom.building}</p>
+        <div className="flex items-center gap-3">
+          <img src="/slugloo-icon.PNG" alt="Slug Loo Icon" className="w-16 h-16" />
+          <div>
+            <Link href="/" className="text-sm hover:underline">← Back to Map</Link>
+            <h1 className="text-2xl font-bold mt-2">{bathroom.name}</h1>
+            <p className="text-sm">{bathroom.building}</p>
+          </div>
+        </div>
       </header>
 
       <main className="container mx-auto p-4 max-w-3xl">
@@ -111,6 +116,7 @@ export default function BathroomDetail({ params }) {
           <Link 
             href={`/bathroom/${bathroom.id}/review`}
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
+            style={{ backgroundColor: '#003c6c', color: '#fff' }}
           >
             Add Review
           </Link>
