@@ -121,7 +121,7 @@ export default function Home() {
         <div className="mb-4">
           <Link 
             href="/add"
-            className="inline-block px-6 py-3 rounded-lg font-semibold"
+            className="inline-block px-6 py-3 rounded-lg font-semibold hover:opacity-80 transition"
             style={{ backgroundColor: '#003c6c', color: '#fff' }}
           >
             + Add Bathroom

@@ -245,7 +245,7 @@ export default function AddBathroom() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400"
+            className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-400 hover:opacity-80 transition"
             style={{ backgroundColor: '#003c6c', color: '#fff' }}
           >
             {submitting ? 'Adding...' : 'Add Bathroom'}

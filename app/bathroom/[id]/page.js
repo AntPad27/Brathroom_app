@@ -115,7 +115,7 @@ export default function BathroomDetail({ params }) {
         <div className="mb-4">
           <Link 
             href={`/bathroom/${bathroom.id}/review`}
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 hover:opacity-80 transition"
             style={{ backgroundColor: '#003c6c', color: '#fff' }}
           >
             Add Review

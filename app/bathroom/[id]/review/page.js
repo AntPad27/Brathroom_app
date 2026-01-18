@@ -117,7 +117,7 @@ export default function AddReview({ params }) {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400"
+            className="w-full py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400 hover:opacity-80 transition"
             style={{ backgroundColor: submitting ? undefined : '#003c6c', color: '#fff' }}
           >
             {submitting ? 'Submitting...' : 'Submit Review'}
