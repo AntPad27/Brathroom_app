@@ -62,8 +62,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" >
-      <header className="p-4" style={{ backgroundColor: '#003c6c', color: '#fdc700' }}>
-        <div className="flex items-center gap-3">
+      <header className="p-4 w-full" style={{ backgroundColor: '#003c6c', color: '#fdc700', minHeight: '120px'  }}>
+        <div className="flex items-start gap-3">
           <img src="/slugloo-icon.PNG" alt="Slug Loo Icon" className="w-16 h-16" />
           <div>
             <h1 className="text-2xl font-bold">Slug Loo</h1>
